@@ -4,6 +4,7 @@ import Col from 'react-bootstrap/Col';
 import { ArrowRightCircle } from 'react-bootstrap-icons';
 import headerImg from "../assets/images/header-img.svg";
 import { useState, useEffect } from "react";
+import MyCV from "../assets/My_CV.pdf"
 
 export const Banner = () => {
 
@@ -14,6 +15,16 @@ export const Banner = () => {
     const [index, setIndex] = useState(1);
     const toRotate = [ "Web Developer", "Web Designer", "UI/UX Designer" ];
     const period = 2000;
+
+    const handleDownload = () => {
+        const link = document.createElement('a');
+        link.href = MyCV;
+        link.download = 'My_CV.pdf';
+
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    };
 
     useEffect(() => {
         let ticker = setInterval(() => {
@@ -62,7 +73,7 @@ export const Banner = () => {
                         </h1>
                         <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
                         </p>   
-                        <button onClick={()=> console.log('pressed')}>Let's Connect<ArrowRightCircle size={25}></ArrowRightCircle></button>
+                        <button onClick={handleDownload}>Download CV<ArrowRightCircle size={25}></ArrowRightCircle></button>
                     </Col>
                     <Col xs={12} md={6} xl={5}>
                         <img src={headerImg} alt="header-image"></img>

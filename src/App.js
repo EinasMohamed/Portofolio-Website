@@ -6,6 +6,7 @@ import { Banner } from './Components/Banner';
 import { Projects } from './Components/Projects';
 import { Contact } from './Components/Contact';
 import { Newsletter } from './Components/Newsletter';
+import { Footer } from './Components/Footer';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
       <Projects></Projects>
       <Contact></Contact>
       <Newsletter></Newsletter>
+      <Footer></Footer>
     </div>
   );
 }
